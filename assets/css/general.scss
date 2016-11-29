@@ -1,0 +1,37 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: $header-height 0 $footer-height 0;
+  @include media-breakpoint-down(sm) { padding-top: 0px; }
+  background-color: $color-body-bg;
+  font-family: $font-standard;
+}
+
+address {
+  white-space: pre;
+}
+
+section {
+  padding-top: $header-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+}
+
+h2 {
+  margin: 0 auto;
+  padding: 0;
+  line-height: 100px;
+  font-size: 3rem;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 1rem;
+}

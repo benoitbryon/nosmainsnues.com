@@ -1,0 +1,15 @@
+{
+  "name": "nosmainsnues",
+  "version": "0.0.0",
+  "main": "public/css/nosmainsnues.css",
+  "ignore": [
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "bootstrap": "~4",
+    "fontawesome": "~4",
+    "jQuery": "~2",
+    "tether": "~1"
+  },
+  "devDependencies": {}
+}

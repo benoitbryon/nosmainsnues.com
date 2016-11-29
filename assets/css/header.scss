@@ -1,0 +1,31 @@
+header {
+  position: absolute;
+  display: block;
+  top: 0;
+  height: $header-height;
+  nav {
+    @extend .navbar;
+    @extend .navbar-light;
+    @extend .navbar-fixed-top;
+    padding: 0;
+    border-width: 0;
+    border-style: dotted;
+    border-color: #000;
+    background-color: rgba(#fff, 1);
+    height: $header-height;
+    -moz-box-shadow: 0 2px 20px #333;
+    -webkit-box-shadow: 0 2px 20px #333;
+    box-shadow: 0 2px 20px #333;
+    > div {
+      @extend .container;
+      #logo {
+        @extend .navbar-brand;
+	padding: 0;
+	margin: 0;
+	font-family: $font-title;
+	line-height: $header-height;
+	font-size: 2rem;
+      }
+    }
+  }
+}
