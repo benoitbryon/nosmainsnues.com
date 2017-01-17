@@ -1,7 +1,7 @@
 {
   "name": "nosmainsnues.com",
   "version": "0.0.0",
-  "description": "Theme for Nos mains nues' website",
+  "description": "Theme for NosMainsNues.com website",
   "dependencies": {
     "bower": "^1",
     "uglify-js": "^2"

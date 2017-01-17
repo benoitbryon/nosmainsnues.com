@@ -1,6 +1,9 @@
+/.bundle/
 /bin/
 /bower_components/
 /lib/
 /node_modules/
 /public/
 /var/
+*.pyc
+*.lock

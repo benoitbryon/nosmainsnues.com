@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Benoît Bryon'
 SITENAME = u'Nos mains nues'
-SITEURL = 'http://nos-mains-nues.com'
+SITEURL = 'http://nosmainsnues.com'
 
 PATH = 'content'
 PAGE_PATHS = ['pages']

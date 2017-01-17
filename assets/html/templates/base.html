@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- Content. -->
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta name="description" content="Benoît Bryon, développement web, médiation numérique, formation">
+    <meta name="description" content="Benoît Bryon, développeur de communs">
     <meta name="author" content="Benoît Bryon">
     <meta name="robots" content="index, follow">
     <!-- Feeds. -->
@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="canonical" href="{% block permalink %}{{ SITEURL }}/{% endblock %}">
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- IE tricks. -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,23 +49,21 @@
 </head>
 <body id="{% block body_id %}{% endblock %}">
   <header>
-    <nav>
-      <div>
-        <a id="logo" href="{{ site_url }}">Nos mains nues</a>
-      </div>
-    </nav>
+    <div>
+      <nav>
+        <div>
+          <a id="logo" href="{{ site_url }}">Nos mains nues</a>
+          <p>Bien faire ensemble, tout simplement.</p>
+        </div>
+      </nav>
+    </div>
   </header>
   {% block content %}{% endblock %}
   <footer>
     <div>
       <div>
         <p class="copyright">&copy; Benoît Bryon, 2016</p>
-        <p class="contacts">
-          <a href="mailto:contact@nos-mains-nues.com"><span class="fa fa-envelope"> </span></a>
-          <a href="https://twitter.com/benoitbryon/"><span class="fa fa-twitter"> </span></a>
-          <a href="https://github.com/benoitbryon/"><span class="fa fa-github"> </span></a>
-          <a href="https://kiwiirc.com/client/irc.freenode.net/?nick=Contact|?#coworking-pb"><span class="fa fa-comment"> </span></a>
-        </p>
+        <p class="contacts"></p>
       </div>
     </div>
   </footer>

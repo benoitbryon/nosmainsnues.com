@@ -1,30 +1,52 @@
 header {
-  position: absolute;
+  position: relative;
   display: block;
+  width: 100%;
   top: 0;
   height: $header-height;
-  nav {
-    @extend .navbar;
-    @extend .navbar-light;
-    @extend .navbar-fixed-top;
-    padding: 0;
-    border-width: 0;
-    border-style: dotted;
-    border-color: #000;
-    background-color: rgba(#fff, 1);
-    height: $header-height;
-    -moz-box-shadow: 0 2px 20px #333;
-    -webkit-box-shadow: 0 2px 20px #333;
-    box-shadow: 0 2px 20px #333;
-    > div {
-      @extend .container;
-      #logo {
-        @extend .navbar-brand;
-	padding: 0;
-	margin: 0;
-	font-family: $font-title;
-	line-height: $header-height;
-	font-size: 2rem;
+  border-width: 0;
+  border-style: solid;
+  border-color: #000;
+  background-color: rgba($color-one-lead, .9);
+  > div {
+    @include make-container();
+    @include media-breakpoint-up(md) { @include make-container-max-widths(); }
+    nav {
+      @include make-row();
+      @extend .navbar;
+      @extend .navbar-light;
+      padding: 0;
+      border-width: 0;
+      border-radius: 0;
+      background-color: transparent;
+      height: $header-height;
+      > div {
+        @include make-col-ready();
+        @include make-col(12);
+        #logo {
+          @extend .navbar-brand;
+          padding: 5px 0 0 0;
+          margin: 0;
+          font-family: $font-title;
+	  font-weight: lighter;
+          line-height: 20px;
+          font-size: 1.4rem;
+	  color: rgba(#fff, 0.7);
+	  &:hover {
+	    color: #fff;
+	  }
+        }
+        p {
+          display: block;
+          line-height: 15px;
+          margin: 0;
+          padding: 0;
+          font-family: $font-title;
+	  font-weight: lighter;
+          font-size: 1rem;
+          clear: both;
+	  color: rgba(#fff, 0.5);
+        }
       }
     }
   }

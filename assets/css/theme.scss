@@ -1,15 +1,30 @@
 /* Features. */
 $enable-transitions: true;
+$debug: false;
 
 /* Fonts. */
 $font-standard: 'opensansregular', sans-serif;
-$font-title: 'quicksandlight', sans-serif;
-$font-subtitle: 'quicksandlight', sans-serif;
+$font-title: 'quicksand', sans-serif;
+$font-subtitle: 'quicksand', sans-serif;
 $font-code: monospace;
 
 /* Colors. */
 $color-body-bg: #ffffff;
 
+$color-one-lead: #2BB9B1;
+$color-one-title: #ffffff;
+$color-one-text: #fafafa;
+$color-one-shadow: #247356;
+
+$color-two-lead: #ffffff;
+$color-two-title: #ff9900;
+$color-two-text: rgba(#000, 0.9);
+$color-two-shadow: rgba(#000, .1);
+
+$color-three-lead: #2bba6b;
+$color-three-text: #ffffff;
+$color-three-shadow: #176339;
+
 /* Sensitive sizes. */
-$header-height: 60px;
+$header-height: 50px;
 $footer-height: 60px;

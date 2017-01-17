@@ -1,89 +1,177 @@
 body#index {
-  section#services {
-    padding-bottom: 2em;
-    background-color: #000;
-    background-image: url(/img/bg-02.jpg);
-    background-attachment: fixed;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-shadow: 0px 0px 1px #000, 1px 1px 2px #000, 1px 1px 3px #000, 1px 1px 10px #000;
+  section {
     > div {
       @include make-container();
-      @include make-container-max-widths();
+      @include media-breakpoint-up(lg) { @include make-container-max-widths(); }
+    }
+  }
+  section#tagline {
+    @include media-map-up(padding-top, 2rem, 2.5rem, 3rem, 3.5rem, 4rem);
+    background-color: $color-one-lead;
+    color: $color-one-title;
+    text-shadow: 1px 1px 1px $color-one-shadow, 1px 1px 10px rgba($color-one-shadow, 0.5);
+    > div {
       > div {
         blockquote {
-          font-size: 2rem;
-          padding: 0 50px;
+          @include media-map-up(font-size, 1.4rem, 1.8rem, 2.4rem, 3.2rem, 4rem);
+          @include media-map-up(padding-left, 20px, 40px, 60px, 80px, 100px);
           position: relative;
-        }
-        > p {
-          padding: 0 50px;
-          margin-bottom: 2em;
-          color: rgba(#fff, 0.8);
-          a {
-            color: rgba(#fff, 1);
-            text-decoration: none;
-            border-style: dotted;
-            border-color: rgba(#fff, 0.5);
-            border-width: 0 0 1px 0;
-            &:hover {
-              border-style: solid;
-              border-color: rgba(#fff, 0.8);
-            }
+          line-height: 1.2em;
+          &:first-line {
+            @include media-map-up(font-size, 1rem, 1.2rem, 1.5rem, 2rem, 2.5rem);
           }
         }
-        blockquote:before {
-          display: block;
-          content: "\201C";
-          font-size: 8rem;
-          position: absolute;
-          left: -10px;
-          top: -50px;
-          font-family: $font-title;
-        }
+      }
+    }
+  }
+  section#benefits, section#services {
+    > div {
+      > div {
         article {
           @include make-row();
           > div {
-            @include make-col();
-            @include make-col-span(4);
-            h2 {
-              font-size: 2rem;
-              line-height: 2rem;
-              margin: 1rem auto;
-	      font-weight: bold;
+            @include make-col-ready();
+            @include media-breakpoint-up(md) { @include make-col(4); text-align: center; }
+            .fa {
+              @include media-map-up(margin-right, 5px, 10px, 0px, 0px, 0px);
+              @include media-map-up(display, auto, auto, block, block, block);
+              @include media-map-up(font-size, 1.5rem, 2rem, 2.5rem, 3rem, 4rem);
+              @include media-map-up(line-height, inherit, inherit, 3rem, 4rem, 5rem);
             }
-	    ul { list-style-type: square;}
-	    li {
-	      font-size: 1.1em;
-	      font-weight: normal;
-	    }
+            h2 {
+              line-height: 1.2em;
+              margin: 1rem auto;
+              @include media-map-up(font-size, 1.2rem, 1.3rem, 1.4rem, 1.7rem, 2rem);
+            }
+            p {
+              @include media-map-up(font-size, 0.9rem, 0.9rem, 0.9rem, 1rem, 1rem);
+              strong {
+                font-size: 1.1em;
+  	        line-height: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  section#benefits {
+    background-color: $color-one-lead;
+    padding-bottom: 4rem;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg
+             xmlns='http://www.w3.org/2000/svg'
+             width='100'
+             height='100'
+             viewBox='0 0 100 100'
+             preserveAspectRatio='none'%3E
+        %3Cpolygon points='0,0 50,100 0,100' style='fill:%23ffffff%3B' /%3E
+        %3Cpolygon points='100,0 50,100 100,100' style='fill:%23ffffff%3B' /%3E
+      %3C/svg%3E
+    ");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 4rem;
+    color: $color-one-text;
+    text-shadow: 1px 1px 1px $color-one-shadow, 1px 1px 10px rgba($color-one-shadow, 0.5);
+    .fa {
+      color: $color-one-title;
+    }
+    h2 {
+      color: $color-one-title;
+    }
+    strong {
+      color: $color-one-title;
+    }
+  }
+  section#services {
+    color: $color-two-text;
+    .fa {
+      color: $color-two-title;
+      text-shadow: 1px 1px 1px $color-two-shadow;
+    }
+    h2 {
+      color: $color-two-title;
+      text-shadow: 1px 1px 1px $color-two-shadow;
+    }
+  }
+  section#proposal {
+    @include media-map-up(padding-top, 2rem, 2.5rem, 3rem, 3.5rem, 4rem);
+    padding-bottom: 0;
+    background-color: $color-two-lead;
+    color: $color-two-title;
+    text-shadow: 1px 1px 2px $color-two-shadow;
+    > div {
+      > div {
+        blockquote {
+          @include media-map-up(font-size, 1rem, 1.2rem, 1.5rem, 2rem, 2.5rem);
+          @include media-map-up(padding-left, 20px, 40px, 60px, 80px, 100px);
+          position: relative;
+          line-height: 1.5em;
+          strong {
+            @include media-map-up(font-size, 3rem, 4rem, 5rem, 6rem, 7.5rem);
           }
         }
       }
     }
   }
   section#contact {
-    @include make-container();
-    @include make-container-max-widths();
+    background-color: $color-three-lead;
+    padding-top: 5rem;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg
+             xmlns='http://www.w3.org/2000/svg'
+             width='100'
+	     height='100'
+	     viewBox='0 0 100 100'
+	     preserveAspectRatio='none'%3E
+        %3Cpolygon points='0,0 50,100 100,0' style='fill:%23ffffff%3B' /%3E
+      %3C/svg%3E
+    ");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 4rem;
+    color: $color-three-text;
+    text-shadow: 1px 1px 3px $color-three-shadow, 1px 1px 10px rgba($color-three-shadow, 0.5);
+    a {
+      color: rgba($color-three-text, .8);
+      text-decoration: none;
+      border-style: dotted;
+      border-color: rgba($color-three-text, 0.5);
+      border-width: 0 0 1px 0;
+      &:hover {
+        color: rgba($color-three-text, 1);
+        border-style: solid;
+        border-color: rgba($color-three-text, 0.8);
+      }
+    }
     > div {
       > div {
         article {
           @include make-row();
 	  h2 {
-            @include make-col(); 
-            @include make-col-span(12);
+            @include make-col-ready(); 
+            @include make-col(12);
+            text-shadow: 1px 1px 3px $color-three-shadow;
+	    @include media-map-up(font-size, 1.2rem, 1.5rem, 2rem, 2.5rem, 3rem);
 	  }
           div.meet {
-            @include make-col(); 
-            @include make-col-span(7);
+            @include make-col-ready(); 
+            @include media-breakpoint-up(md) { @include make-col(6); }
           }
 	  div.call {
-            @include make-col(); 
-            @include make-col-span(5);
+            @include make-col-ready(); 
+            @include media-breakpoint-up(md) { @include make-col(6); }
+	    img {
+	      @include media-breakpoint-up(md) { float: left; }
+	      border-width: 0px;
+	      border-color: #000;
+	      border-style: solid;
+	      margin: 0 20px 30px 0;
+	      width: 150px;
+              box-shadow: 1px 1px 3px $color-three-shadow;
+	    }
 	    h3 {
-	      font-size: 1.5rem;
-	      color: #666;
+	      @include media-map-up(font-size, 1.2rem, 1.3rem, 1.4rem, 1.5rem, 1.5rem);
+	      color: $color-three-text;
 	    }
 	    p {
 	      margin: 0 auto 0.5rem auto;
