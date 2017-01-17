@@ -59,6 +59,7 @@ watch: develop
 #: html - Generate HTML files in public/ folder.
 .PHONY: html
 html:
+	mkdir -p content
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 
