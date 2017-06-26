@@ -8,47 +8,46 @@ body#index {
   section#tagline {
     @include media-map-up(padding-top, 2rem, 2.5rem, 3rem, 3.5rem, 4rem);
     background-color: $color-one-lead;
+//    background-image: url(../img/mains-nues-1.jpg);
+//    background-size: cover;
+//    background-repeat: no-repeat;
+//    background-position: 50% 50%;
     color: $color-one-title;
     text-shadow: 1px 1px 1px $color-one-shadow, 1px 1px 10px rgba($color-one-shadow, 0.5);
     > div {
       > div {
         blockquote {
-          @include media-map-up(font-size, 1.4rem, 1.8rem, 2.4rem, 3.2rem, 4rem);
+          @include media-map-up(font-size, 1rem, 1rem, 1.4rem, 1.5rem, 2rem);
           @include media-map-up(padding-left, 20px, 40px, 60px, 80px, 100px);
-          position: relative;
-          line-height: 1.2em;
-          &:first-line {
-            @include media-map-up(font-size, 1rem, 1.2rem, 1.5rem, 2rem, 2.5rem);
+          line-height: 2em;
+          .excerpt {
+            @include media-map-up(font-size, 1.5rem, 2.1rem, 2.8rem, 3.2rem, 4rem);
           }
         }
       }
     }
   }
-  section#benefits, section#services {
+  section#benefits, section#applications {
     > div {
       > div {
+        @include make-row();
         article {
-          @include make-row();
+          @include make-col-ready();
           > div {
-            @include make-col-ready();
-            @include media-breakpoint-up(md) { @include make-col(4); text-align: center; }
-            .fa {
-              @include media-map-up(margin-right, 5px, 10px, 0px, 0px, 0px);
-              @include media-map-up(display, auto, auto, block, block, block);
-              @include media-map-up(font-size, 1.5rem, 2rem, 2.5rem, 3rem, 4rem);
-              @include media-map-up(line-height, inherit, inherit, 3rem, 4rem, 5rem);
-            }
             h2 {
-              line-height: 1.2em;
-              margin: 1rem auto;
-              @include media-map-up(font-size, 1.2rem, 1.3rem, 1.4rem, 1.7rem, 2rem);
+              line-height: 1rem;
+              margin: 0 auto;
+	      padding-bottom: .5rem;
+	      span {
+	        display: block;
+	      }
+              .fa {
+	        display: block;
+		margin: 0 auto;
+              }
             }
             p {
-              @include media-map-up(font-size, 0.9rem, 0.9rem, 0.9rem, 1rem, 1rem);
-              strong {
-                font-size: 1.1em;
-  	        line-height: 1em;
-              }
+              @include media-map-up(font-size, 0.9rem, 0.9rem, 0.9rem, .9rem, .9rem);
             }
           }
         }
@@ -72,26 +71,76 @@ body#index {
     background-position: bottom;
     background-size: 100% 4rem;
     color: $color-one-text;
-    text-shadow: 1px 1px 1px $color-one-shadow, 1px 1px 10px rgba($color-one-shadow, 0.5);
-    .fa {
-      color: $color-one-title;
-    }
-    h2 {
-      color: $color-one-title;
-    }
     strong {
       color: $color-one-title;
     }
-  }
-  section#services {
-    color: $color-two-text;
-    .fa {
-      color: $color-two-title;
-      text-shadow: 1px 1px 1px $color-two-shadow;
+    text-shadow: 1px 1px 1px $color-one-shadow, 1px 1px 10px rgba($color-one-shadow, 0.5);
+    > div {
+      > div {
+        article {
+          @include media-breakpoint-up(md) { @include make-col(6); }
+          @include media-breakpoint-up(xl) { @include make-col(3); }
+          div {
+            h2 {
+              color: $color-one-title;
+              @include media-map-up(text-align, left, left, center, center, center);
+              .fa {
+                color: $color-one-title;
+                @include media-map-up(margin-right, 15px, 20px, auto, auto, auto);
+                @include media-map-up(font-size, 2.5rem, 3rem, 2.5rem, 3rem, 4rem);
+                @include media-map-up(line-height, 2.5rem, 3rem, 3rem, 4rem, 5rem);
+                @include media-map-up(float, left, left, none, none, none);
+              }
+              .action {
+                @include media-map-up(font-size, 1.4rem, 1.7rem, 1.7rem, 2rem, 2rem);
+                line-height: 1.1em;
+               }
+              .result {
+                @include media-map-up(font-size, 1.2rem, 1.2rem, 1.4rem, 1.4rem, 1.3rem);
+                line-height: 1.2em;
+		margin-bottom: .5rem;
+              }
+            }
+            p {
+              @include media-map-up(padding-left, 66px, 82px, 0, 0, 0);
+            }
+          }
+        }
+      }
     }
-    h2 {
-      color: $color-two-title;
-      text-shadow: 1px 1px 1px $color-two-shadow;
+  }
+  section#applications {
+    color: $color-two-text;
+    > div {
+      > div {
+        article {
+          @include media-breakpoint-up(sm) { @include make-col(6); }
+          @include media-breakpoint-up(md) { @include make-col(3); }
+          div {
+            h2 {
+              @include media-map-up(text-align, left, center, center, center, center);
+              text-shadow: 1px 1px 1px $color-two-shadow;
+              .action {
+                @include media-map-up(font-size, 1.4rem, 1.5rem, 1.5rem, 2rem, 2.2rem);
+                line-height: 1em;
+               }
+              .result {
+                @include media-map-up(font-size, 1rem, 1rem, 1rem, 1rem, 1.3rem);
+                line-height: 1em;
+              }
+              color: $color-two-title;
+              .fa {
+                color: $color-two-title;
+                text-shadow: 1px 1px 1px $color-two-shadow;
+                @include media-map-up(margin-right, 15px, auto, auto, auto, auto);
+                @include media-map-up(font-size, 2.5rem, 3rem, 2.5rem, 3rem, 4rem);
+                @include media-map-up(line-height, 2.5rem, 3rem, 3rem, 4rem, 5rem);
+                @include media-map-up(float, left, none, none, none, none);
+              }
+            }
+          }
+        }
+      }
     }
   }
   section#proposal {
@@ -103,12 +152,12 @@ body#index {
     > div {
       > div {
         blockquote {
-          @include media-map-up(font-size, 1rem, 1.2rem, 1.5rem, 2rem, 2.5rem);
+          @include media-map-up(font-size, 1.2rem, 1.2rem, 1.5rem, 2rem, 2.5rem);
           @include media-map-up(padding-left, 20px, 40px, 60px, 80px, 100px);
           position: relative;
           line-height: 1.5em;
           strong {
-            @include media-map-up(font-size, 3rem, 4rem, 5rem, 6rem, 7.5rem);
+            @include media-map-up(font-size, 3.6rem, 4rem, 5rem, 6rem, 7.5rem);
           }
         }
       }
@@ -151,11 +200,12 @@ body#index {
             @include make-col-ready(); 
             @include make-col(12);
             text-shadow: 1px 1px 3px $color-three-shadow;
-	    @include media-map-up(font-size, 1.2rem, 1.5rem, 2rem, 2.5rem, 3rem);
+	    @include media-map-up(font-size, 2rem, 2rem, 2rem, 2.5rem, 3rem);
 	  }
           div.meet {
             @include make-col-ready(); 
             @include media-breakpoint-up(md) { @include make-col(6); }
+	    font-size: 0.9rem;
           }
 	  div.call {
             @include make-col-ready(); 
