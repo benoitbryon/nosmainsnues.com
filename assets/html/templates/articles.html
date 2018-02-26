@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block body_id %}articles{% endblock %}
+
+{% block content %}
+  <section id="articles">
+    <h1>Articles</h1>
+    {% for article in articles %}
+      {% set illustration = article.metadata.illustration %}
+      <article>
+        <a href="/articles/{{ article.url }}">
+          <img src="{{ illustration }}" />
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.metadata.summary }}</p>
+        </a>
+        <div class="article-info">
+          <p class="published-on">
+            Article publié le {{ article.locale_date }}
+          </p>
+          {% if article.authors %}
+            <p class="author">par
+              {% for author in article.authors %}
+                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+              {% endfor %}
+            </p>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </section>
+
+{% endblock content %}

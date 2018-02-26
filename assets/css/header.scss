@@ -3,49 +3,103 @@ header {
   display: block;
   width: 100%;
   top: 0;
-  height: $header-height;
   border-width: 0;
   border-style: solid;
   border-color: #000;
-  background-color: rgba($color-one-lead, .9);
+  background-color: rgba($color-one-lead, 1);
   > div {
     @include make-container();
     @include media-breakpoint-up(md) { @include make-container-max-widths(); }
     nav {
-      @include make-row();
       @extend .navbar;
+      @extend .navbar-expand-md;
       @extend .navbar-light;
       padding: 0;
       border-width: 0;
-      border-radius: 0;
       background-color: transparent;
-      height: $header-height;
-      > div {
-        @include make-col-ready();
-        @include make-col(12);
-        #logo {
-          @extend .navbar-brand;
-          padding: 5px 0 0 0;
-          margin: 0;
-          font-family: $font-title;
-	  font-weight: lighter;
-          line-height: 20px;
-          font-size: 1.4rem;
-	  color: rgba(#fff, 0.7);
-	  &:hover {
-	    color: #fff;
-	  }
+      font-family: $font-title;
+      #logo {
+        @extend .navbar-brand;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: rgba(#fff, 0.7);
+        &:hover {
+          color: #fff;
         }
-        p {
+        .brand {
+          line-height: 25px;
+          font-size: 24px;
+        }
+        .punchline {
           display: block;
           line-height: 15px;
           margin: 0;
           padding: 0;
           font-family: $font-title;
-	  font-weight: lighter;
-          font-size: 1rem;
+          font-weight: lighter;
+          font-size: 15px;
           clear: both;
-	  color: rgba(#fff, 0.5);
+          color: rgba(#fff, 0.5);
+        }
+      } 
+      .navbar-toggler {
+        line-height: $header-height;
+	font-size: 2rem;
+        color: rgba(#fff, 0.7);
+	border-width: 0;
+        &:hover {
+          color: #fff;
+        }
+      }
+      #navbarLinks {
+        @extend .collapse;
+        @extend .navbar-collapse;
+        height: 100%; 
+        ul {
+          @extend .navbar-nav;
+          @extend .ml-auto;
+          height: 100%;
+          li {
+            @extend .nav-item;
+            height: 100%;
+            a {
+              height: 100%;
+              @extend .nav-link;
+	      padding: 0 20px;
+	      font-size: 1.2em;
+              background-color: rgba($color-one-lead, 1);
+              color: rgba(#fff, 0.7);
+	      line-height: $header-height;
+              &:hover, &:focus {
+                color: #fff;
+                background-color: $color-two-title;
+              }
+            }
+	    &.active {
+              a {
+                background-color: #fff;
+                color: $color-one-lead;
+                &:hover, &:focus {
+                  background-color: #fff;
+                  color: $color-one-lead;
+                }
+              }
+	    }
+	  }
+	}
+        &.show {
+          height: auto;
+          ul {
+            height: auto;
+            li {
+              height: auto;
+              a {
+               height: auto;
+	       line-height: 1.2em;
+              }
+            }
+          }
         }
       }
     }

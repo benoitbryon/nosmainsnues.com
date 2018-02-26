@@ -1,0 +1,230 @@
+body.article {
+  section {
+    @include media-map-up(padding-top, 2rem, 2rem, 2rem, 2rem, 2rem);
+    @include make-container();
+    @include media-breakpoint-up(md) { @include make-container-max-widths(); }
+    position: relative;
+    > article {
+      @include make-row();
+      h1 {
+        @include make-col-ready();
+        @include make-col(12);
+        margin: 0 auto;
+        line-height: 1em;
+        @include media-map-up(font-size, 2.5rem, 2.7rem, 2.8rem, 2.9rem, 3rem);
+        a {
+          font-size: inherit;
+          color: $color-one-lead;
+        }
+        &:hover {
+          
+        }
+      }
+      .subtitle {
+        @include make-col-ready();
+        @include make-col(12);
+        margin: 0 auto;
+        line-height: 1em;
+        @include media-map-up(font-size, 1.1rem, 1.2rem, 1.3rem, 1.4rem, 1.5rem);
+        font-family: $font-title;
+        color: #999;
+      }
+      .article-info {
+        @include make-col-ready();
+        @include make-col(12);
+        @include make-col-offset(0);
+        color: #ccc;
+        font-style: italic;
+        font-size: 0.9em;
+        text-align: right;
+        p {
+          display: inline-block;
+          margin: 0;
+        }
+        .published-on {
+        }
+        .modified-on {
+        }
+        .authors {
+        }
+      }
+      .article-content { 
+        @include make-col-ready();
+        @include make-col(12);
+        padding-top: 3rem;
+        h2 {
+          @include make-col-ready();
+          @include media-breakpoint-up(xs) {
+            @include make-col(12);
+            @include make-col-offset(0);
+          }
+          @include media-breakpoint-up(md) {
+            @include make-col(12);
+            @include make-col-offset(0);
+          }
+          @include media-breakpoint-up(lg) {
+            @include make-col(12);
+            @include make-col-offset(0);
+          }
+          @include media-map-up(font-size, 1.7rem, 1.8rem, 2rem, 2.5rem, 2.5rem);
+          line-height: 1.1em;
+          padding-bottom: 0.5em;
+          @include media-map-up(margin-bottom, 1rem, 2rem, 2rem, 2rem,2rem);
+          @include media-map-up(margin-top, 2rem, 3rem, 3rem, 3rem,  3rem);
+          color: $color-one-lead;
+          border-width: 0 0 2px 0;
+          border-color: $color-one-lead;
+          border-style: solid;
+        }
+        ul {
+          list-style-type: square;
+          list-style-position: outside;
+          width: 100%;
+          padding: 0 2em;
+        }
+        p, li, blockquote, table.footnote {
+          text-align: justify;
+          @include make-col-ready();
+          @include media-breakpoint-up(xs) {
+            @include make-col(12);
+            @include make-col-offset(0);
+          }
+          @include media-breakpoint-up(md) {
+            @include make-col(9);
+            @include make-col-offset(1);
+          }
+          @include media-breakpoint-up(lg) {
+            @include make-col(6);
+            @include make-col-offset(0);
+          }
+        }
+        li {
+          margin-bottom: 0.5em;
+        }
+        blockquote {
+          font-size: 1.1em;
+          @include media-map-up(padding-left, 40px, 40px, 50px, 50px, 70px);
+          border-width: 0 0 0 0;
+          border-color: $color-one-lead;
+          border-style: solid;
+          line-height: 1.2em;
+          .excerpt {
+            @include media-map-up(font-size, 1rem, 1rem, 1.4rem, 1.5rem, 2rem);
+          }
+          position: relative;
+          font-family: $font-title;
+          font-style: italic;
+        }
+        blockquote:before {
+          display: block;
+          content: "\201C";
+          position: absolute;
+          @include media-map-up(font-size, 3rem, 4rem, 5rem, 6rem, 8rem);
+          @include media-map-up(left, 0, 0, 0, 0, -10px);
+          @include media-map-up(top, 5px, 10px, 15px, 20px, 2rem);
+          font-family: $font-title;
+          color: $color-one-lead;
+        }
+        .figure {
+          @include make-col-ready();
+          @include media-breakpoint-up(xs) {
+            @include make-col(12);
+            @include make-col-offset(0);
+            float: none;
+          }
+          @include media-breakpoint-up(md) {
+            @include make-col(9);
+            @include make-col-offset(1);
+            float: none;
+          }
+          @include media-breakpoint-up(lg) {
+            @include make-col(6);
+            @include make-col-offset(0);
+            float: right;
+          }
+          img {
+            width: 100%;
+          }
+          margin-bottom: 1em;
+          .caption {
+            font-family: $font-title;
+            font-size: .9em;
+            @include make-col(12);
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            color: #999;
+            img {
+              width: auto;
+            }
+          }
+        }
+        .note, .warning, .tip {
+          @include make-col-ready();
+          @include media-breakpoint-up(xs) {
+            @include make-col(12);
+            @include make-col-offset(0);
+            float: none;
+          }
+          @include media-breakpoint-up(md) {
+            @include make-col(9);
+            @include make-col-offset(1);
+            float: none;
+          }
+          @include media-breakpoint-up(lg) {
+            @include make-col(6);
+            @include make-col-offset(0);
+            float: right;
+          }
+          margin-bottom: 1em;
+          p {
+            border-width: 0 0 0 3px;
+            border-color: #E0E0E0;
+            border-style: solid;
+            padding: 1em;
+            color: #666;
+            font-size: .9em;
+            @include make-col(12);
+            margin: 0;
+          }
+          .admonition-title {
+            padding-bottom: 0;
+            font-size: 1.1em;
+            font-family: $font-title;
+            text-align: left;
+          }
+        }
+        .note {
+          p {
+            border-color: #edd400;
+            background-color: #fff5a8;
+          }
+          .admonition-title {
+            color: #c4a000;
+          }
+        }
+        .tip {
+          p {
+            border-color: #73d216;
+            background-color: #d4fcac;
+          }
+          .admonition-title {
+            color: #4e9a06;
+          }
+        }
+        table.footnote {
+          margin-bottom: 1em;
+          td {
+            text-align: justify;
+            line-height: 1.5em;
+            color: #666;
+            font-size: 0.8em;
+            &.label {
+              width: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,35 +14,42 @@
   {% endfor %}
 
 {% endblock %}
+{% block body_class %}{{ super() }} article{% endblock %}
 
 {% block content %}
 <section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
- {% import 'translations.html' as translations with context %}
- {{ translations.translations_for(article) }}
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </abbr>
-	{% if article.modified %}
-    <abbr class="modified" title="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
-    </abbr>
-	{% endif %}
-    {% if article.authors %}
-    <address class="vcard author">
-      By {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-        {% endfor %}
-    </address>
+  <article>
+    <div class="article-info">
+      <p class="published-on">
+        Article publié le {{ article.locale_date }}
+      </p>
+      {% if article.modified %}
+        <p class="modified-on">
+          {{ article.locale_modified }}
+        </p>
+      {% endif %}
+      {% if article.authors %}
+        <p class="author">par
+          {% for author in article.authors %}
+            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+    </div>
+
+    <h1>
+      <a href="{{ SITEURL }}/articles/{{ article.url }}" rel="bookmark"
+         title="Permalien vers {{ article.title|striptags }}">{{ article.title }}
+      </a>
+    </h1>
+    {% if article.metadata.subtitle %}
+      <p class="subtitle">{{ article.metadata.subtitle }}</p>
     {% endif %}
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    {{ article.content }}
-  </div><!-- /.entry-content -->
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+    <div class="article-content">
+      {{ article.content }}
+    </div>
+  </article>
 </section>
 {% endblock %}

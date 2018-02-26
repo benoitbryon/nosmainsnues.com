@@ -35,7 +35,7 @@
     {% endif %}
     <!-- Style. -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="{% block permalink %}{{ SITEURL }}/{% endblock %}">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- IE tricks. -->
@@ -47,29 +47,48 @@
     <![endif]-->
   {% endblock head %}
 </head>
-<body id="{% block body_id %}{% endblock %}">
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
   <header>
     <div>
       <nav>
-        <div>
-          <a id="logo" href="{{ site_url }}">Nos mains nues</a>
-          <p>Bien faire ensemble, tout simplement.</p>
+        <a id="logo" href="/">
+          <span class="brand">Nos mains nues</span>
+          <span class="punchline">Bien faire ensemble, tout simplement.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Afficher/masquer le menu">
+          <span class="far fa-fw fa-list-alt"></span>
+        </button>
+        <div id="navbarLinks">
+          <ul>
+              <li{% if output_file == 'articles/index.html' or article %} class="active"{% endif %}>
+              <a href="/articles/">
+                <span class="far fa-fw fa-newspaper"> </span>
+                Publications <span class="sr-only">(actuel)</span>
+              </a>
+            </li>
+            <li>
+              <a href="/#contact">
+                <span class="far fa-fw fa-id-card"> </span>
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
   </header>
   {% block content %}{% endblock %}
+  <div class="w-100"></div>
   <footer>
     <div>
       <div>
-        <p class="copyright">&copy; Benoît Bryon, 2016</p>
+        <p class="copyright">&copy; Benoît Bryon, 2016-2018</p>
         <p class="contacts"></p>
       </div>
     </div>
   </footer>
   {% block javascript %}
-    <script src="./js/libs.min.js" type="text/javascript"></script>
-    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="/assets/js/main.js" type="text/javascript"></script>
   {% endblock %}
 </body>
 </html>

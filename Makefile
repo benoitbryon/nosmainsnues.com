@@ -6,25 +6,20 @@
 
 # Directories.
 BASEDIR = $(CURDIR)
-BINDIR ?= $(CURDIR)/bin
 INPUTDIR = $(BASEDIR)/content
 OUTPUTDIR = $(BASEDIR)/public
 CONFFILE = $(BASEDIR)/pelicanconf.py
 PUBLISHCONF = $(BASEDIR)/publishconf.py
 
 # Executables.
-BOWER ?= $(shell npm bin)/bower
-BUNDLE_INSTALL ?= BUNDLE_BIN=$(BINDIR) bundle install --path=$(BASEDIR)/lib
 GHP ?= ghp-import
 GORUN ?= gorun.py
-GRUNT ?= $(shell npm bin)/grunt
-NPM ?= npm
 PELICAN ?= pelican
 PELICANOPTS =
 PIP ?= pip
 PY ?= python
-SASS ?= $(BINDIR)/sass
-UGLIFYJS ?= $(shell npm bin)/uglifyjs
+WEBPACK ?= npx webpack
+YARN ?= yarn
 
 
 #: help - Display available targets.
@@ -38,21 +33,13 @@ help:
 #: develop - Install development libraries.
 .PHONY: develop
 develop:
-	$(BUNDLE_INSTALL)
-	$(NPM) install
-	$(BOWER) install
+	$(YARN) --verbose
 	$(PIP) install -r requirements.pip
-
-
-#: bower - Download libraries with bower.
-.PHONY: bower
-bower: develop
-	$(BOWER) install
 
 
 #: watch - Watch in-development files and automatically build them on update.
 .PHONY: watch
-watch: develop
+watch:
 	$(GORUN)
 
 
@@ -63,45 +50,22 @@ html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 
-#: css - Generate CSS files in public/ folder.
-.PHONY: css
-css:
-	mkdir -p public/css
-	$(SASS) assets/css/main.scss public/css/main.css
+#: assets - Generate CSS files in public/ folder.
+.PHONY: assets
+assets:
+	$(WEBPACK) --config=webpack-config.js
 
 
-#: jslibs - Generate JS libraries in public/ folder.
-.PHONY: js
-js:
-	mkdir -p public/js
-	$(UGLIFYJS) \
-		bower_components/jquery/dist/jquery.js \
-		bower_components/tether/dist/js/tether.js \
-		bower_components/bootstrap/dist/js/bootstrap.js \
-		--output=public/js/libs.min.js
-	$(UGLIFYJS) \
-		assets/js/main.js \
-		--output=public/js/main.js
-
-
-#: img - Generate public/img/
+#: media - Generate public/img/
 .PHONY: img
 img:
-	mkdir -p public/img
-	rsync -r --progress assets/img/ public/img/
-
-
-#: fonts - Generate public/fonts/
-.PHONY: fonts
-fonts:
-	mkdir -p public/fonts
-	rsync --progress bower_components/fontawesome/fonts/* public/fonts/
-	rsync -r --progress assets/fonts/ public/fonts/
+	mkdir -p public/assets/img
+	rsync -r --progress assets/img/ public/assets/img/
 
 
 #: public - Generate public/ folder contents.
 .PHONY: public
-public: css fonts html img js
+public: html img assets
 
 
 #: serve - Serve public/ folder on localhost:8000
@@ -119,7 +83,6 @@ clean:
 .PHONY: dist-clean
 dist-clean: clean
 	rm -rf public/
-	rm -rf bower_components/
 
 
 #: maintainer-clean - Remove almost everything that can be re-generated.

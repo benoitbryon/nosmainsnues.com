@@ -1,13 +1,8 @@
 DIRECTORIES = (
-    ('assets/css', 'make css'),
+    ('assets/css', 'make assets'),
+    ('assets/fonts', 'make assets'),
     ('assets/html', 'make html'),
-    ('assets/fonts', 'make fonts'),
     ('assets/img', 'make img'),
-    ('assets/js', 'make jsmain'),
-    ('bower.json', 'make develop'),
-    ('bower_components', 'make css fonts jslibs'),
+    ('assets/js', 'make assets'),
     ('content', 'make html'),
-    ('Gemfile', 'make develop'),
-    ('package.json', 'make develop'),
-    ('requirements.pip', 'make develop'),
 )
