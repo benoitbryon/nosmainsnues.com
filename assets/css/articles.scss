@@ -10,6 +10,7 @@ body#articles {
     }
     > article {
       clear: both;
+      @include media-map-up(min-height, 140px, 140px, 140px, 200px, 200px);
       > a {
         @include make-row();
         text-decoration: none;

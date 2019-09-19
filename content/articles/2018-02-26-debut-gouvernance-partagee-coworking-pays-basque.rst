@@ -2,8 +2,8 @@
 Se lancer dans la gouvernance partagée
 ######################################
 
-:date: 2018-02-19
-:slug: 2018-02-19-demarrage-gouvernance-partagee-coworking-pays-basque
+:date: 2018-02-26
+:slug: 2018-02-26-demarrage-gouvernance-partagee-coworking-pays-basque
 :tags: gouvernance partagée, tiers-lieux, Coworking Pays basque
 :subtitle: retour sur mon expérience avec Coworking Pays basque
 :summary: Comment introduire la gouvernance partagée dans une organisation
