@@ -3,6 +3,7 @@ Initiation sketchnote et facilitation graphique
 ###############################################
 
 :date: 2019-06-11
+:modified: 2020-01-20 18:00
 :slug: facilitation-graphique/initiation-sketchnote-facilitation-graphique
 :tags: formation, atelier, sketchnote, facilitation graphique
 :subtitle: atelier de découverte, 1 jour
@@ -41,29 +42,33 @@ C'est aussi une occasion de passer un moment associant l'utile et l'agréable,
 le créatif et le productif :)
 
 
-********************************************
-Prochaine session les 28 et 29 novembre 2019
-********************************************
+*********************************************************
+Recherche organisme de formation pour prochaines sessions
+*********************************************************
 
 .. figure:: /img/facilitation-graphique/bandeau-atelier-900x300.jpg
 
+**Nous cherchons un organisme de formation avec lequel nous pourrions proposer l'atelier**
+dans des conditions confortables pour chacun.
+Nous apprécions beaucoup de réaliser cet atelier, nous recevons beaucoup de demandes,
+du feedback très positif... et **nous avons besoin d'aide pour :**
+
+* **communiquer sur l'atelier** (catalogue, réseaux...) ;
+* **assurer la partie administrative liée à la formation**,
+  dont le financement et les inscriptions.
+
+En attendant cette coopération, nous pourrons programmer de nouvelles sessions
+à prix libre. À titre d'information, voici ce qui était proposé lors de la
+dernière session, en novembre 2019 :
+
 * **Tarif :** prix libre :raw-html:`<br />`
   *Facture émise en fin d'atelier.* :raw-html:`<br />`
-  *Financements via formation professionnelle en cours d'étude.*
 
 * **Niveau :** débutant, atelier d’initiation
 * **Public :** Tous publics – à partir de 12 ans
 * **Nombre de participants :** 6 à 10
-* **Date et heure :** jeudi 28 et vendredi 29 novembre 2019, début à 9h, sortie à 17h
-
-.. note::
-
-   Afin de pouvoir proposer une prise en charge financière dans le cadre de la formation
-   professionnelle continue, nous recherchons un organisme de formation partenaire qui
-   serait disposé à nous faciliter les aspects administratifs, la communication et
-   le recrutement des stagiaires.
-
-* **Lieu :** `Interstices, 3 rue Hélène Boucher 40220 Tarnos <https://www.openstreetmap.org/node/4937199660#map=14/43.5460/-1.4924>`_
+* **Date et heure :** 2 jours consécutifs, début à 9h, sortie à 17h
+* **Lieu :** chez Interstices à Tarnos, grande salle bien lumineuse :)
 * **Repas partagé :** le midi chacun amène un petit quelque chose à grignoter.
 
 :raw-html:`<p style="text-align:center;"><a href="https://forms.gle/TYQvSwd9F3a5GjfU9" class="btn btn-primary">Je m'inscris :)</a></p>`
