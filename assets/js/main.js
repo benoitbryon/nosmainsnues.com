@@ -1,6 +1,5 @@
 import jQuery from 'jquery'
-import 'bootstrap';
-import '../css/main.scss';
+import bootstrap from 'bootstrap'
 
 
 (function($) {

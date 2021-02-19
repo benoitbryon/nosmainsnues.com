@@ -1,26 +1,17 @@
 {
   "name": "nosmainsnues.com",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Theme for NosMainsNues.com",
-  "dependencies": {},
-  "devDependencies": {
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.3",
-    "bootstrap": "^4.0.0",
-    "css-loader": "^0.28.9",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.6",
-    "jquery": "^3.3.1",
-    "node-sass": "^4.7.2",
-    "popper.js": "^1.12.9",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.20.1",
-    "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^3.10.0",
-    "webpack-cli": "^3.3.9"
-  },
-  "scripts": {},
-  "repository": "",
+  "main": "index.js",
   "author": "Benoît Bryon",
   "license": "BSD",
-  "main": "public/assets/js/main.js"
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "popper.js": "^1.16.1",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.5.1",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.2"
+  },
+  "scripts": {}
 }

@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 # coding=utf-8
-from __future__ import unicode_literals
 
-
-AUTHOR = u'Benoît Bryon'
-SITENAME = u'Nos mains nues'
+AUTHOR = 'Benoît Bryon'
+SITENAME = 'Nos mains nues'
 SITEURL = 'https://nosmainsnues.com'
 
 PATH = 'content'
 PAGE_PATHS = ['pages']
-PAGE_URL = '{slug}.html'
+PAGE_URL = '/{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
 ARTICLE_PATHS = ['articles']
 ARTICLE_SAVE_AS = 'articles/{slug}.html'
@@ -19,14 +17,15 @@ USE_FOLDER_AS_CATEGORY = False
 PATH_METADATA = '(?P<slug>.*)/'
 SLUGIFY_SOURCE = 'basename'
 
-THEME = 'assets/html'
 TIMEZONE = 'Europe/Paris'
 DEFAULT_DATE_FORMAT = '%d %B %Y'
+DEFAULT_LANG = 'fr'
 
-DEFAULT_LANG = u'fr'
-
+THEME = 'layout'
 TEMPLATE_PAGES = {
     'articles.html': 'articles/index.html',
+    'formations.html': 'formations/index.html',
+    'facilitation-graphique.html': 'facilitation-graphique/index.html',
 }
 
 # Feed generation is usually not desired when developing
@@ -40,7 +39,6 @@ AUTHOR_FEED_RSS = None
 LINKS = ()
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = ()
 
 DEFAULT_PAGINATION = False

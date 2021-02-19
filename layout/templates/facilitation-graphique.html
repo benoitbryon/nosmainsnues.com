@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body_id %}articles{% endblock %}
+
+{% block content %}
+  <section id="articles">
+    {% for page in pages %}{% if page.slug == 'facilitation-graphique/index' %}
+    <h1>{{ page.title }}</h1>
+    <div>{{ page.content }}</div>
+    {% endif %}{% endfor %}
+    {% for page in pages %}
+      {% if 'facilitation graphique' in page.tags and not page.slug == 'facilitation-graphique/index' %}
+      {% set illustration = page.metadata.illustration %}
+      <article>
+        <a href="{{ page.url }}">
+          <img src="{{ illustration }}" />
+          <h2>{{ page.title }}</h2>
+          <p>{{ page.metadata.summary }}</p>
+        </a>
+        <div class="article-info">
+          <p class="published-on">
+            {{ page.subtitle }}
+          </p>
+          {% if page.authors %}
+            <p class="author">par
+              {% for author in page.authors %}
+                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+              {% endfor %}
+            </p>
+          {% endif %}
+        </div>
+
+      </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+{% endblock content %}

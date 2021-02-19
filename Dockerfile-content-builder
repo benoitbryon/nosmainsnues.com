@@ -1,0 +1,7 @@
+FROM python:3.9
+
+RUN groupadd --gid 1000 content
+RUN useradd --uid 1000 --gid content --shell /bin/bash --create-home content
+
+RUN pip install virtualenv pip pipenv
+

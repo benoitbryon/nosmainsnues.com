@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+
+  statics-builder:
+    image: "node:15.5.1"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+
+
+  content-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile-content-builder
+    user: "content"
+    working_dir: /home/content/app
+    environment:
+      - PIPENV_VENV_IN_PROJECT=1
+    volumes:
+      - ./:/home/content/app

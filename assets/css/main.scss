@@ -2,20 +2,15 @@
 @import "fonts";
 @import "theme";
 
-/* Libraries. */
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-brands.scss";
 @import "~bootstrap/scss/bootstrap";
 
-/* Specific stuff. */
+/* Global site's style. */
 @import "mixins";
 @import "general";
 @import "header";
 @import "footer";
 
-/* Pages. */
+/* Specific pages' style. */
 @import "index";
 @import "articles";
 @import "article";

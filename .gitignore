@@ -1,5 +1,4 @@
-/node_modules/
-/public/
-/var/
-*.pyc
-*.lock
+.cache/
+node_modules/
+public/
+var/
